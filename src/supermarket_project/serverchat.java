@@ -11,7 +11,7 @@ import java.net.*;
  *
  * @author asaid
  */
-public class serverchat extends javax.swing.JFrame {
+public class serverchat extends javax.swing.JFrame implements Runnable{
 
     static ServerSocket ss;
     static Socket s;
@@ -19,6 +19,7 @@ public class serverchat extends javax.swing.JFrame {
     static DataOutputStream dout;
     public serverchat(){
         initComponents();
+        setVisible(true);
     }
    
     
@@ -150,4 +151,9 @@ public class serverchat extends javax.swing.JFrame {
     private javax.swing.JTextField TextField_server;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void run() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -9,13 +9,14 @@ import java.io.*;
  *
  * @author asaid
  */
-public class userchat extends javax.swing.JFrame {
+public class userchat extends javax.swing.JFrame implements Runnable {
 
     static Socket s;
     static DataInputStream din;
     static DataOutputStream dout;
     public userchat() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -150,4 +151,9 @@ public class userchat extends javax.swing.JFrame {
     private javax.swing.JTextField TextField_chat;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void run() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

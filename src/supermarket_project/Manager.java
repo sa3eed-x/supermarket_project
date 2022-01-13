@@ -17,6 +17,7 @@ public class Manager
         Stock s = new Stock();
         s.readFile();
         s.creatProduct(p,qty);
+        s.WriteFilepro();
     }
     
     public void addProduct(int id, int product_production_date, int product_expiry_date, int qty)
@@ -24,6 +25,8 @@ public class Manager
         Product old = new Product();
         Product p   = new Product();
         Stock s = new Stock();
+        
+        s.readFile();
         
         old = s.getProduct(id);
         
@@ -43,6 +46,7 @@ public class Manager
             s.readFile();
             s.creatProduct(p,qty);
         }
+        s.WriteFilepro();
     }
     
     public void creatOrderRequste(HashMap<Product,Integer> order_details)

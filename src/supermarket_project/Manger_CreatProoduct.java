@@ -13,8 +13,10 @@ public class Manger_CreatProoduct extends javax.swing.JFrame {
     /**
      * Creates new form Manger_CreatProoduct
      */
+    Manager m =new Manager();
     public Manger_CreatProoduct() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -26,22 +28,43 @@ public class Manger_CreatProoduct extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         TextField_Brand = new javax.swing.JTextField();
-        Label_ProductId = new javax.swing.JLabel();
         TextField_Category = new javax.swing.JTextField();
         jLabel_ProductName = new javax.swing.JLabel();
         TextField_Production = new javax.swing.JTextField();
         Label_Price = new javax.swing.JLabel();
         TextField_ExpiryDate = new javax.swing.JTextField();
-        TextField_Id = new javax.swing.JTextField();
         TextField_Name = new javax.swing.JTextField();
         TextField_Price = new javax.swing.JTextField();
         Label_Brand = new javax.swing.JLabel();
         Label_Catrgory = new javax.swing.JLabel();
         Label_ProductionDate = new javax.swing.JLabel();
         Label_ExpiryDate = new javax.swing.JLabel();
+        jLabel3_id = new javax.swing.JLabel();
+        jTextField2_id = new javax.swing.JTextField();
         Add_Product = new javax.swing.JButton();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
+        jLabel4 = new javax.swing.JLabel();
+        jTextField2_qty = new javax.swing.JTextField();
+
+        jLabel1.setText("jLabel1");
+
+        jLabel2.setText("jLabel2");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jTextField1.setText("jTextField1");
+
+        jLabel3.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,9 +77,6 @@ public class Manger_CreatProoduct extends javax.swing.JFrame {
             }
         });
         jPanel1.add(TextField_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 71, -1));
-
-        Label_ProductId.setText("Product Id");
-        jPanel1.add(Label_ProductId, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 23, -1, -1));
 
         TextField_Category.setText("Category");
         jPanel1.add(TextField_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 174, 71, -1));
@@ -82,9 +102,6 @@ public class Manger_CreatProoduct extends javax.swing.JFrame {
             }
         });
         jPanel1.add(TextField_ExpiryDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 254, 71, -1));
-
-        TextField_Id.setText("Id");
-        jPanel1.add(TextField_Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 71, -1));
 
         TextField_Name.setText("Name");
         TextField_Name.addActionListener(new java.awt.event.ActionListener() {
@@ -114,10 +131,25 @@ public class Manger_CreatProoduct extends javax.swing.JFrame {
         Label_ExpiryDate.setText("Expiry_date");
         jPanel1.add(Label_ExpiryDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 257, -1, -1));
 
-        Add_Product.setText("Add Product");
+        jLabel3_id.setText("ID");
+        jPanel1.add(jLabel3_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 37, -1));
+
+        jTextField2_id.setText("ID");
+        jPanel1.add(jTextField2_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 70, -1));
+
+        Add_Product.setText("Creat");
         Add_Product.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Add_ProductActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("QTY");
+
+        jTextField2_qty.setText("QTY");
+        jTextField2_qty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2_qtyActionPerformed(evt);
             }
         });
 
@@ -127,20 +159,37 @@ public class Manger_CreatProoduct extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(261, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Add_Product, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(106, 106, 106)
+                        .addComponent(jTextField2_qty, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                        .addComponent(Add_Product, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Add_Product, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(71, 71, 71)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Add_Product, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField2_qty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
@@ -169,7 +218,27 @@ public class Manger_CreatProoduct extends javax.swing.JFrame {
 
     private void Add_ProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Add_ProductActionPerformed
         // TODO add your handling code here:
+        //creatProduct(int product_id, String product_name, double product_price, String product_brand,
+          //  String product_categorg, int product_production_date, int product_expiry_date, int qty)
+          try{
+          int id =Integer.parseInt(jTextField2_id.getText());
+          String name = TextField_Name.getText();
+          double price =Double.parseDouble(TextField_Price.getText());
+          String brand = TextField_Brand.getText();
+          String category = TextField_Category.getText();
+          int pdate  = Integer.parseInt(TextField_Production.getText());
+          int exdate = Integer.parseInt(TextField_ExpiryDate.getText());
+          int qty = Integer.parseInt(jTextField2_qty.getText());
+          
+          m.creatProduct(id, name, price, brand, category, exdate, pdate,qty);
+          }catch(Exception e){
+              System.out.println(e.getMessage());
+          }
     }//GEN-LAST:event_Add_ProductActionPerformed
+
+    private void jTextField2_qtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2_qtyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2_qtyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,16 +281,25 @@ public class Manger_CreatProoduct extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Catrgory;
     private javax.swing.JLabel Label_ExpiryDate;
     private javax.swing.JLabel Label_Price;
-    private javax.swing.JLabel Label_ProductId;
     private javax.swing.JLabel Label_ProductionDate;
     private javax.swing.JTextField TextField_Brand;
     private javax.swing.JTextField TextField_Category;
     private javax.swing.JTextField TextField_ExpiryDate;
-    private javax.swing.JTextField TextField_Id;
     private javax.swing.JTextField TextField_Name;
     private javax.swing.JTextField TextField_Price;
     private javax.swing.JTextField TextField_Production;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel3_id;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel_ProductName;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2_id;
+    private javax.swing.JTextField jTextField2_qty;
     // End of variables declaration//GEN-END:variables
 }

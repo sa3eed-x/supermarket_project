@@ -19,6 +19,7 @@ public class JManager extends javax.swing.JFrame {
      */
     public JManager() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -43,6 +44,7 @@ public class JManager extends javax.swing.JFrame {
         Button_SendOrder = new javax.swing.JButton();
         Button_ShowStock = new javax.swing.JButton();
         Button_ShowSuppliersHistory = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -63,10 +65,25 @@ public class JManager extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Button_CreatProduct.setText("Creat product");
+        Button_CreatProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_CreatProductActionPerformed(evt);
+            }
+        });
 
         Button_AddProduct.setText("Add Product");
+        Button_AddProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_AddProductActionPerformed(evt);
+            }
+        });
 
         Button_SendOrder.setText("Send Order");
+        Button_SendOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_SendOrderActionPerformed(evt);
+            }
+        });
 
         Button_ShowStock.setText("Show Stock");
         Button_ShowStock.addActionListener(new java.awt.event.ActionListener() {
@@ -76,27 +93,39 @@ public class JManager extends javax.swing.JFrame {
         });
 
         Button_ShowSuppliersHistory.setText("Show  Suppliers History");
+        Button_ShowSuppliersHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_ShowSuppliersHistoryActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("CHAT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Button_SendOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
-                        .addComponent(Button_ShowStock, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(Button_CreatProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                        .addComponent(Button_AddProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Button_ShowSuppliersHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Button_SendOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Button_AddProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Button_ShowStock, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(32, 32, 32))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Button_ShowSuppliersHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(199, 199, 199))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,12 +134,14 @@ public class JManager extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Button_AddProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button_CreatProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addComponent(Button_ShowSuppliersHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Button_SendOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Button_ShowSuppliersHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Button_ShowStock, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Button_SendOrder, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(118, 118, 118))
         );
 
@@ -119,7 +150,33 @@ public class JManager extends javax.swing.JFrame {
 
     private void Button_ShowStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_ShowStockActionPerformed
         // TODO add your handling code here:
+        new Manager_ShowStock();
     }//GEN-LAST:event_Button_ShowStockActionPerformed
+
+    private void Button_AddProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_AddProductActionPerformed
+        // TODO add your handling code here:
+        new Manager_AddProduct();
+    }//GEN-LAST:event_Button_AddProductActionPerformed
+
+    private void Button_ShowSuppliersHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_ShowSuppliersHistoryActionPerformed
+        // TODO add your handling code here:
+        new Manger_ShowSupplierHistory();
+    }//GEN-LAST:event_Button_ShowSuppliersHistoryActionPerformed
+
+    private void Button_SendOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_SendOrderActionPerformed
+        // TODO add your handling code here:
+        new Manager_AddProduct();
+    }//GEN-LAST:event_Button_SendOrderActionPerformed
+
+    private void Button_CreatProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_CreatProductActionPerformed
+        // TODO add your handling code here:
+        new Manger_CreatProoduct();
+    }//GEN-LAST:event_Button_CreatProductActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new serverchat();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
@@ -179,6 +236,7 @@ public class JManager extends javax.swing.JFrame {
     private javax.swing.JButton Button_SendOrder;
     private javax.swing.JButton Button_ShowStock;
     private javax.swing.JButton Button_ShowSuppliersHistory;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu5;

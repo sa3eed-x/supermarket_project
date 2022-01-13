@@ -6,7 +6,7 @@ package supermarket_project;
 import java.io.*;
 import java.util.*;
 
-public class User 
+public class User implements Serializable
 {
     private int    user_id;
     private String user_fname;
@@ -20,6 +20,18 @@ public class User
     
     
     public User(){}
+
+    public User(int user_id, String user_fname, String user_lname, int user_salary, String user_department, int user_phone, String supplier_company, String user_mail, String user_pass) {
+        this.user_id = user_id;
+        this.user_fname = user_fname;
+        this.user_lname = user_lname;
+        this.user_salary = user_salary;
+        this.user_department = user_department;
+        this.user_phone = user_phone;
+        this.supplier_company = supplier_company;
+        this.user_mail = user_mail;
+        this.user_pass = user_pass;
+    }
 
     public int getUser_id() {
         return user_id;

@@ -9,7 +9,7 @@ import java.util.*;
 //calcOffer();
 public class Porduct_Offer 
 {
-    private HashMap<Integer,Double> offers_list;
+    private HashMap<Integer,Double> offers_list=new HashMap<Integer,Double>();
     
     Porduct_Offer(){}
 
@@ -46,7 +46,24 @@ public class Porduct_Offer
             System.out.println(e2.getMessage());
         }
     }
-    
+    public void writefile(){
+        try 
+        {
+            FileOutputStream write_RSS_map_file = new FileOutputStream("Offers_HashMap.bin");
+            ObjectOutputStream ois1 = new ObjectOutputStream(write_RSS_map_file);
+            ois1.writeObject(offers_list);
+            ois1.flush();
+            ois1.close();
+            
+            
+        } 
+        catch (FileNotFoundException e) {
+            System.out.println("Products File Not found");
+        }
+        catch (IOException e1) {
+            System.out.println(e1.getMessage());
+        } 
+    }
     public boolean check(int id)
     {
         boolean found = false;

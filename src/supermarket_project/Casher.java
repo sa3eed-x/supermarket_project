@@ -44,7 +44,7 @@ public class Casher extends User
             System.out.println(ex.getMessage());
         }
         
-        s.readFile();
+        //s.readFile();
         
         //check items
         for (int j = 0; j < items_ids.size(); j++) 
@@ -72,6 +72,8 @@ public class Casher extends User
         //store the invoice
         r.storeNewInv(i.getInvoice_id(),i);
         
+        //write
+        r.writeFileInv();
     }
     
     public void editInvoice(int id, Product p, short opr, int qty)

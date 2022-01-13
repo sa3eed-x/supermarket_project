@@ -15,7 +15,9 @@ public class JAdmin extends javax.swing.JFrame {
      */
     public JAdmin() {
         initComponents();
+        setVisible(true);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,10 +29,23 @@ public class JAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         Button_AddEmp = new javax.swing.JButton();
         Button_CreatOffer = new javax.swing.JButton();
+        jButton5_supp = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
+
+        jButton2.setText("jButton2");
+
+        jButton3.setText("jButton3");
+
+        jButton4.setText("jButton4");
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,25 +63,36 @@ public class JAdmin extends javax.swing.JFrame {
             }
         });
 
+        jButton5_supp.setText("ADD Supplier");
+        jButton5_supp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5_suppActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(Button_AddEmp, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton5_supp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Button_AddEmp, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
                 .addComponent(Button_CreatOffer, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
-                .addGap(60, 60, 60))
+                .addGap(53, 53, 53))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(121, 121, 121)
+                .addGap(88, 88, 88)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Button_AddEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Button_CreatOffer, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(135, 135, 135))
+                    .addComponent(Button_CreatOffer, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Button_AddEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addComponent(jButton5_supp, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         pack();
@@ -74,11 +100,21 @@ public class JAdmin extends javax.swing.JFrame {
 
     private void Button_AddEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_AddEmpActionPerformed
         // TODO add your handling code here:
+        new Admin_AddEmp();
+        
+        
+        
     }//GEN-LAST:event_Button_AddEmpActionPerformed
 
     private void Button_CreatOfferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_CreatOfferActionPerformed
         // TODO add your handling code here:
+        new Admin_CreatOffers();
     }//GEN-LAST:event_Button_CreatOfferActionPerformed
+
+    private void jButton5_suppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5_suppActionPerformed
+        // TODO add your handling code here:
+        new AddSupplier();
+    }//GEN-LAST:event_jButton5_suppActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,5 +156,10 @@ public class JAdmin extends javax.swing.JFrame {
     private javax.swing.JButton Button_AddEmp;
     private javax.swing.JButton Button_CreatOffer;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5_supp;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

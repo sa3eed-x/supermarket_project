@@ -75,26 +75,27 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="Button_SendOrder" min="-2" pref="187" max="-2" attributes="0"/>
-                      <EmptySpace pref="140" max="32767" attributes="0"/>
-                      <Component id="Button_ShowStock" min="-2" pref="191" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <Component id="Button_CreatProduct" min="-2" pref="187" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="140" max="32767" attributes="0"/>
                       <Component id="Button_AddProduct" min="-2" pref="191" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Button_ShowSuppliersHistory" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
+                          <Component id="Button_SendOrder" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="Button_ShowStock" pref="191" max="32767" attributes="0"/>
+                          <Component id="jButton1" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="Button_ShowSuppliersHistory" min="-2" pref="209" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -106,12 +107,15 @@
                   <Component id="Button_AddProduct" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
                   <Component id="Button_CreatProduct" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="42" max="32767" attributes="0"/>
-              <Component id="Button_ShowSuppliersHistory" min="-2" pref="60" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Button_SendOrder" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                  <Component id="Button_ShowSuppliersHistory" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                   <Component id="Button_ShowStock" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="46" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="Button_SendOrder" pref="59" max="32767" attributes="0"/>
+                  <Component id="jButton1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
           </Group>
@@ -123,16 +127,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Creat product"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_CreatProductActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Button_AddProduct">
       <Properties>
         <Property name="text" type="java.lang.String" value="Add Product"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_AddProductActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Button_SendOrder">
       <Properties>
         <Property name="text" type="java.lang.String" value="Send Order"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_SendOrderActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Button_ShowStock">
       <Properties>
@@ -146,6 +159,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Show  Suppliers History"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_ShowSuppliersHistoryActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="CHAT"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

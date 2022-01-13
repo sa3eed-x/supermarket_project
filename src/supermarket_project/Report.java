@@ -9,14 +9,12 @@ import java.io.*;
 
 public class Report implements Serializable
 {
-    private HashMap<Product,Integer> sales;
-    private HashMap<Integer, Invoice> invoices;
-    private ArrayList<Integer> ids;
-    
-    private ArrayList<User> users;
-    
-    private ArrayList<Order> orders;
-    private ArrayList<Integer> ids_ord;
+    private HashMap<Product,Integer> sales=new HashMap<Product,Integer>();
+    private HashMap<Integer, Invoice> invoices=new HashMap<Integer, Invoice>();
+    private ArrayList<Integer> ids=new ArrayList<Integer>();
+    public ArrayList<User> users=new ArrayList<User>();
+    private ArrayList<Order> orders=new ArrayList<Order>();
+    private ArrayList<Integer> ids_ord=new ArrayList<Integer>();
     
     
     public Report(){}
@@ -108,14 +106,18 @@ public class Report implements Serializable
             FileOutputStream write_RSS_map_file = new FileOutputStream("RSStock.bin");
             ObjectOutputStream ois1 = new ObjectOutputStream(write_RSS_map_file);
             ois1.writeObject(sales);
-            
+            ois1.flush();
+            ois1.close();
             FileOutputStream write_RIS_map_file = new FileOutputStream("RIStock.bin");
             ObjectOutputStream ois2 = new ObjectOutputStream(write_RIS_map_file);
             ois2.writeObject(invoices);
-            
+            ois2.flush();
+            ois2.close();
             FileOutputStream write_RIDS_map_file = new FileOutputStream("RIDStock.bin");
             ObjectOutputStream ois3 = new ObjectOutputStream(write_RIDS_map_file);
             ois3.writeObject(ids);
+            ois3.flush();
+            ois3.close();
         } 
         catch (FileNotFoundException e) {
             System.out.println("Report File Not found");
@@ -159,8 +161,8 @@ public class Report implements Serializable
             FileOutputStream write_RSS_map_file = new FileOutputStream("Users.bin");
             ObjectOutputStream ois1 = new ObjectOutputStream(write_RSS_map_file);
             ois1.writeObject(users);
-            
-            
+            ois1.flush();
+            ois1.close();
         } 
         catch (FileNotFoundException e) {
             System.out.println("users File Not found");
@@ -221,6 +223,39 @@ public class Report implements Serializable
         } 
     }
     
+    public void writeFileInv()
+    {
+        try 
+        {
+            FileOutputStream write_RSS_map_file = new FileOutputStream("Inv.bin");
+            ObjectOutputStream ois1 = new ObjectOutputStream(write_RSS_map_file);
+            ois1.writeObject(invoices);
+            ois1.flush();
+            ois1.close();
+        } 
+        catch (FileNotFoundException e) {
+            System.out.println("Orders File Not found");
+        }
+        catch (IOException e1) {
+            System.out.println(e1.getMessage());
+        } 
+        
+        try 
+        {
+            FileOutputStream IDOrders_map_file = new FileOutputStream("Inv_ids.bin");
+            ObjectOutputStream ois2 = new ObjectOutputStream(IDOrders_map_file);
+            ois2.writeObject(ids);
+            ois2.flush();
+            ois2.close();
+        } 
+        catch (FileNotFoundException e) {
+            System.out.println("Orders File Not found");
+        }
+        catch (IOException e1) {
+            System.out.println(e1.getMessage());
+        }
+    }
+    
     public boolean check(int id)
     {
         boolean found = false;
@@ -246,13 +281,60 @@ public class Report implements Serializable
         }
     }
     
-    public boolean chekMailPass(String mail, String pass)
+    public int chekMailPass(String mail, String pass)
+    {
+        
+        this.readFileUsers();
+        int found = -1;
+        for(int i=0; i<users.size(); i++)
+        {
+            // "admin".equals(mail)&&"admin".equals(pass)
+            //users.get(i).getUser_mail() == mail && users.get(i).getUser_pass() == pass
+            
+            System.out.println("mail: " + users.get(i).getUser_mail() + " pass: " + users.get(i).getUser_pass());
+            
+            if( users.get(i).getUser_mail().equals(mail) && users.get(i).getUser_pass().equals(pass)) 
+            {
+                found = 1;
+            }
+        }
+        return found;
+    }
+    
+    public void addEmpToRe(User u)
+    {
+        readFileUsers();
+        users.add(u);
+        writeFileUsers();
+//        users.get(0).getUser_fname();
+//        users.get(0).getUser_id();
+        //System.out.println(users.get(0));
+       //setUsers(users);
+       //users.add(0, u);
+    }
+    
+    public void view()
     {
         for(int i=0; i<users.size(); i++)
         {
-            if(users.get(i).getUser_mail() == mail && users.get(i).getUser_pass() == pass)
-                return true;
+            System.out.println("mail: " + users.get(i).getUser_mail() + " pass: " + users.get(i).getUser_pass() + " dep " + users.get(i).getUser_department()
+             + " salary: "+ users.get(i).getUser_salary());
         }
-        return false;
     }
+    
+    public String getDep(String mail, String pass)
+    {
+        
+        this.readFileUsers();
+        
+        for(int i=0; i<users.size(); i++)
+        {
+            if( users.get(i).getUser_mail().equals(mail) && users.get(i).getUser_pass().equals(pass)) 
+            {
+                return users.get(i).getUser_department();
+            }
+        }
+        return null;
+    }
+    
 }

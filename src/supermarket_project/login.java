@@ -3,13 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package supermarket_project;
-
+import javax.swing.*;
 /**
  *
  * @author asaid
  */
-public class login extends javax.swing.JFrame {
-
+public class login extends javax.swing.JFrame   {
+   Report r =new Report();
+   JAdmin a;
+   
     /**
      * Creates new form login
      */
@@ -27,12 +29,15 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPasswordField1 = new javax.swing.JPasswordField();
         jPanel1 = new javax.swing.JPanel();
         label_name = new javax.swing.JLabel();
         lable_password = new javax.swing.JLabel();
         text_name = new javax.swing.JTextField();
         text_password = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+
+        jPasswordField1.setText("jPasswordField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,14 +125,53 @@ public class login extends javax.swing.JFrame {
 
     private void text_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_passwordActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_text_passwordActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        try{
+            String name=text_name.getText();
+            String password=text_password.getText();
+            int check = r.chekMailPass(name, password);
+            System.out.println("chek ret: " + check);
+           if(check==-1)
+           {
+               JOptionPane.showMessageDialog(null, "invalid email or password", "error",JOptionPane.WARNING_MESSAGE );  
+           }
+           else
+           {
+               if("admin".equals(r.getDep(name, password)))
+               {
+                   new JAdmin();
+                   setVisible(false);
+               }
+               else if("Supplier".equals(r.getDep(name, password)))
+               {
+                   new JSupplier();
+                   setVisible(false);
+               }
+               else if("Casher".equals(r.getDep(name, password)))
+               {
+                   new JCasher();
+                   setVisible(false);
+               }
+               else if("Manager ".equals(r.getDep(name, password)))
+                       {
+                          
+                           new JManager();
+                           setVisible(false);
+                       }
+           }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void text_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_nameActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_text_nameActionPerformed
 
     /**
@@ -163,14 +207,19 @@ public class login extends javax.swing.JFrame {
                 new login().setVisible(true);
             }
         });
+       
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel label_name;
     private javax.swing.JLabel lable_password;
     private javax.swing.JTextField text_name;
     private javax.swing.JTextField text_password;
     // End of variables declaration//GEN-END:variables
+
+    
 }

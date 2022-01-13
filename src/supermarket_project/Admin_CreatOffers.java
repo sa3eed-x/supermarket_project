@@ -13,8 +13,11 @@ public class Admin_CreatOffers extends javax.swing.JFrame {
     /**
      * Creates new form Admin_CreatOffers
      */
+    Admin a = new Admin();
+    
     public Admin_CreatOffers() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -48,6 +51,11 @@ public class Admin_CreatOffers extends javax.swing.JFrame {
         });
 
         Button_creat.setText("creat");
+        Button_creat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_creatActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,6 +99,15 @@ public class Admin_CreatOffers extends javax.swing.JFrame {
     private void Text_OfferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_OfferActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Text_OfferActionPerformed
+
+    private void Button_creatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_creatActionPerformed
+        // TODO add your handling code here:
+        int id=Integer.parseInt(Text_ID.getText());
+        Double qty=Double.parseDouble(Text_Offer.getText());
+        
+        a.creatOffers(id, qty);
+        
+    }//GEN-LAST:event_Button_creatActionPerformed
 
     /**
      * @param args the command line arguments

@@ -11,7 +11,7 @@ public class Order
     private int order_id;
     private Date date_requsted;
     private Date date_accepted;
-    private HashMap<Product,Integer> order_details;
+    private HashMap<Product,Integer> order_details=new HashMap<Product,Integer>();
     private boolean approval;
     
     Order(){}

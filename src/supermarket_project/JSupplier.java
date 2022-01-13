@@ -15,6 +15,7 @@ public class JSupplier extends javax.swing.JFrame {
      */
     public JSupplier() {
         initComponents();
+        setVisible(true);
     }
 
     /**
